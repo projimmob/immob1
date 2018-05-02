@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="conseillers")
 @XmlRootElement
@@ -23,6 +25,7 @@ public class Conseiller {
 	private String psw;
 	
 	//Associations
+	@JsonIgnore
 	@OneToMany(mappedBy="conseiller")
 	private List<Visite> listeVisites;
 	

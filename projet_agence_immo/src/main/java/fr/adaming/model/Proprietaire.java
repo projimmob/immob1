@@ -12,6 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="proprietaires")
 @XmlRootElement
@@ -28,6 +30,7 @@ public class Proprietaire extends Personne{
 	@JoinColumn(name="a_id",referencedColumnName="id_a")
 	private Adresse adresse;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="proprio")
 	private List<BienImmo> listeBiens;
 	

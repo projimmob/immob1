@@ -21,6 +21,8 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "biens")
 @XmlRootElement
@@ -56,6 +58,7 @@ public class BienImmo implements Serializable {
 	private String image;
 
 	// ASSOCIATIONS
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "visites_biens", joinColumns = @JoinColumn(name = "b_id", referencedColumnName = "id_b"), 
 	inverseJoinColumns = @JoinColumn(name = "v_id", referencedColumnName = "id_v"))

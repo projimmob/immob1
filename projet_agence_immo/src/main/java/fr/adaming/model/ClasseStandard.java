@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="classes_standards")
 @XmlRootElement
@@ -25,6 +27,7 @@ public class ClasseStandard {
 	private double supMin;
 	
 	//Associations
+	@JsonIgnore
 	@OneToMany(mappedBy="classeS")
 	private List<BienImmo> listeBiens;
 	
