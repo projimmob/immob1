@@ -20,7 +20,7 @@ public class ClientDaoImpl implements IClientDao {
 	@Override
 	public List<Client> getAllClients() {
 		
-		String req = "from Client";
+		String req = "FROM Client";
 		
 		//ouvrir la session : 
 		s=sf.getCurrentSession();
@@ -45,30 +45,11 @@ public class ClientDaoImpl implements IClientDao {
 
 	@Override
 	public Client updateClient(Client cl) {
-		// requete hql :
-		String req = "UPDATE Client as cl set cl.nom=:pNom , cl.telP=:pTelP ,cl.statut=:pStatut "
-				/*+ ", cl.adresse.id_a=:pIdAd,  cl.adresse.rue=:pRueAd, cl.adresse.num=:pNumAd,"
-				+ " cl.adresse.cp=:pCpAd, cl.adresse.ville=:pViAd, cl.adresse.pays=:pPaAd "*/
-				+ " where cl.id_cl=:pIdCl";  //, cl.adresse.id_a=:pIdAdresse
-		
+
 		//ouverture de la session :
 		s=sf.getCurrentSession();
-		
-		//création et récupération du query :
-		Query query = s.createQuery(req);
-		
-		//passage des paramètres :
-		query.setParameter("pNom", cl.getNom());
-		query.setParameter("pTelP", cl.getTelP());
-		query.setParameter("pStatut", cl.getStatut());
-		//query.setParameter("pIdAd", cl.getAdresse().getId_a());
-		/*query.setParameter("pRueAd", cl.getAdresse().getRue());
-		query.setParameter("pNumAd", cl.getAdresse().getNum());
-		query.setParameter("pCpAd", cl.getAdresse().getCp());
-		query.setParameter("pViAd", cl.getAdresse().getVille());
-		query.setParameter("pPaAd", cl.getAdresse().getPays()); */
-		query.setParameter("pIdCl", cl.getId_cl());
-		
+
+		s.update(cl);
 		return cl;
 	}
 

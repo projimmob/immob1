@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -59,9 +60,7 @@ public class BienImmo implements Serializable {
 
 	// ASSOCIATIONS
 	@JsonIgnore
-	@ManyToMany
-	@JoinTable(name = "visites_biens", joinColumns = @JoinColumn(name = "b_id", referencedColumnName = "id_b"), 
-	inverseJoinColumns = @JoinColumn(name = "v_id", referencedColumnName = "id_v"))
+	@OneToMany(mappedBy="bien")
 	List<Visite> listeVisites;
 
 	@ManyToOne

@@ -11,10 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name="visites")
 @XmlRootElement
@@ -36,8 +39,9 @@ public class Visite implements Serializable{
 	
 	
 	//ASSOCIATIONS
-	@ManyToMany(mappedBy="listeVisites")
-	List<BienImmo> listeBiens;
+	@ManyToOne
+	@JoinColumn(name="b_id", referencedColumnName="id_b")
+	private BienImmo bien;
 	
 	@ManyToOne
 	@JoinColumn(name="co_id",referencedColumnName="id_co")
@@ -72,24 +76,22 @@ public class Visite implements Serializable{
 
 //GETTERS ET SETTERS
 	
-	
+
+
+	public BienImmo getBien() {
+		return bien;
+	}
+
+
+
+	public void setBien(BienImmo bien) {
+		this.bien = bien;
+	}
+
 
 	public Long getId_v() {
 		return id_v;
 	}
-
-
-
-	public List<BienImmo> getListeBiens() {
-		return listeBiens;
-	}
-
-
-
-	public void setListeBiens(List<BienImmo> listeBiens) {
-		this.listeBiens = listeBiens;
-	}
-
 
 
 	public Conseiller getConseiller() {
@@ -97,17 +99,14 @@ public class Visite implements Serializable{
 	}
 
 
-
 	public void setConseiller(Conseiller conseiller) {
 		this.conseiller = conseiller;
 	}
 
 
-
 	public void setId_v(Long id_v) {
 		this.id_v = id_v;
 	}
-
 
 
 	public Date getDate() {
@@ -132,8 +131,20 @@ public class Visite implements Serializable{
 		this.heure = heure;
 	}
 
+	public Client getClient() {
+		return client;
+	}
+
+
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 
 	//TO STRING
+
+
 
 	@Override
 	public String toString() {
