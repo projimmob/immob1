@@ -43,5 +43,37 @@ public class ConseillerServiceImpl implements IConseillerService {
 	public Conseiller getConseillerById(long id) {
 		return cDao.getConseillerById(id);
 	}
+
+	/*@Override
+	public Conseiller isExist(Conseiller c) {
+		return cDao.isExist(c);
+	}*/
+
+	@Override
+	public Conseiller isExist(String mail, String pwd) {
+		// TODO Auto-generated method stub
+		return cDao.isExist(mail, pwd);
+	}
+
+
 	
+	
+	
+
+//	@Override
+//	public boolean isExist(Conseiller c) {
+//	
+//		if(c.getMail()=="a@a"&& c.getPsw()=="admin"){
+//			return true;
+//		}else{
+//		return false;
+//	}
+
+	
+	
+	
+	
+	
+	
+
 }

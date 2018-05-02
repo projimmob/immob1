@@ -16,4 +16,9 @@ public interface IConseillerService {
 	
 	public Conseiller getConseillerById (long id);
 	
+	//public Conseiller isExist(Conseiller c);
+	
+	public Conseiller isExist(String mail, String pwd);
+
+	
 }

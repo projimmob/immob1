@@ -51,4 +51,10 @@ public class ConseillerRest {
 	}
 	
 	
+	@RequestMapping(value="/existCons",method=RequestMethod.GET,produces="application/json")
+	public Conseiller isExist(@RequestParam("pMail") String mail, @RequestParam("pPsw") String psw){
+		Conseiller c=new Conseiller(mail, psw);
+		return cService.isExist(mail,psw);
+	}
+	
 }

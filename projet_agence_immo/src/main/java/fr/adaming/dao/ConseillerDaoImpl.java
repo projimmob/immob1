@@ -69,4 +69,41 @@ public class ConseillerDaoImpl implements IConseillerDao{
 		return (Conseiller) query.uniqueResult();
 	}
 
+/*	@Override
+	
+		
+		public Conseiller isExist(Conseiller c) {
+			// la requete jpql
+			String req = "From Conseiller as c WHERE c.mail=:pMail, c.psw=:pPsw";
+			// creer un objet de type Query pour envoyer la requete *
+			s=sf.getCurrentSession();
+			Query query=s.createQuery(req);
+			// passage de la params
+			query.setParameter("pMail", c.getMail());
+			query.setParameter("pPsw", c.getPsw());
+			
+			// envoyer la requte et recup du resultat
+			return  (Conseiller) query.uniqueResult();
+		
+		
+		
+		
+		
+	} */
+
+	@Override
+	public Conseiller isExist(String mail, String pwd) {
+		// la requete jpql
+		String req = "From Conseiller as c WHERE c.mail=:pMail and c.psw=:pPsw";
+		// creer un objet de type Query pour envoyer la requete *
+		s=sf.getCurrentSession();
+		Query query=s.createQuery(req);
+		// passage de la params
+		query.setParameter("pMail", mail);
+		query.setParameter("pPsw", pwd);
+		
+		// envoyer la requte et recup du resultat
+		return  (Conseiller) query.uniqueResult();
+	}
+
 }
