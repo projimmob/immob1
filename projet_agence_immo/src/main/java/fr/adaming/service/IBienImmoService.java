@@ -18,4 +18,10 @@ public interface IBienImmoService {
 	public int deleteBienImmo(long id);
 
 	public BienImmo getBienImmoById(long id);
+	
+	public List<BienImmo> getAllBiensByProprio(long idProprio);
+	
+	public List<BienImmo> getAllBiensByStatut(String statut);
+	
+	public List<BienImmo> getAllBiensByCS(long idCS);
 }

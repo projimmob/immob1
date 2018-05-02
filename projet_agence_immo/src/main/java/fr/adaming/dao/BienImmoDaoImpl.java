@@ -48,7 +48,7 @@ public class BienImmoDaoImpl implements IBienImmoDao{
 		String req = "UPDATE BienImmo as b SET b.type=:pType, " + "b.statut=:pStatut, "
 					+ "b.dateS=:pDS, " + "b.dateD=:pDD, " + "b.revC=:pRev, " 
 					+ "b.prix=:pPrix, " + "b.dateE=:pDE, " +"b.photo=:pPhoto, "
-					+ "b.proprio.id_p=:pProp, " + "b.adresse.id_a:pAd, " + "b.classeS.id_cs=:pCS "
+					+ "b.proprio.id_p=:pProp, " + "b.adresse.id_a=:pAd, " + "b.classeS.id_cs=:pCS "
 					+ "WHERE b.id_b=:pId";
 		s=sf.getCurrentSession();
 		q=s.createQuery(req);
