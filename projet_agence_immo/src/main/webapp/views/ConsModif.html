@@ -1,0 +1,44 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}"/></a>
+	
+<nav class="navbar navbar-light" style="background-color: #E7AF99;">
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" ng-href="#!consAll"><img  ng-src="{{logocons}}"/></a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!add">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!update">Modifier</a></li>
+
+	
+	</ul>
+
+</nav>
+<form class="form-horizontal">
+
+   <div class="form-group">
+    <label for="id_co" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="id_co" placeholder="id" ng-model="cModif.id_co">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMail" class="col-sm-2 control-label">Mail</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="idMail" placeholder="Mail" ng-model="cModif.mail">
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="idPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="idPassword" placeholder="password" ng-model="cModif.psw">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button  type="button" class="btn btn-primary" ng-click="modifier()">Modifier</button>
+    </div>
+  </div>
+</form>

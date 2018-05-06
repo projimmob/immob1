@@ -57,6 +57,7 @@ public class BienImmo implements Serializable {
 	private byte[] photo;
 	@Transient
 	private String image;
+	
 
 	// ASSOCIATIONS
 	@JsonIgnore

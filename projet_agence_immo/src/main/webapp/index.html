@@ -1,32 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="monApp">
 <head>
+<!-- jquery et bootstrap .js -->
+	<script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
 
-<script type="text/javascript" src="assets/resources/js/jquery-3.3.1.js"></script>
 
+	<script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
 
-<script type="text/javascript" src="assets/resources/js/bootstrap.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 <link rel="styleSheet" type="text/css"
 	href="assets/resources/css/bootstrap.css">
 
+
+
+
+<!-- Mapping du css -->
+<link rel="styleSheet" type="text/css" href="assets/css/monStyle.css">
+
+
+
+
+<meta charset="ISO-8859-1">
+<title> APSA |</title>
+</head>
+<body style="background-image: url('assets/images/bghome.jpg'); background-repeat: round;">
+
+
+<!-- librairie angularjs -->
 
 <script type="text/javascript" src="assets/resources/js/angular.js"></script>
 <script type="text/javascript"
 	src="assets/resources/js/angular-route.js"></script>
 <script type="text/javascript"
 	src="assets/resources/js/angular-locale_fr-fr.js"></script>
-
-
-
-<script type="text/javascript" src=""></script>
-<script type="text/javascript" src=""></script> <!--  -->
-<script type="text/javascript" src=""></script>
 <script type="text/javascript"
-	src=""></script>
-<meta charset="ISO-8859-1">
-<title>In</title>
-</head>
-<body>
+	src="assets/resources/js/angular-cookies.js"></script>
+<script type="text/javascript" src="assets/resources/js/angular-base64-upload.js"></script>
+
+
+<!-- Mapping des fichiers assets -->
+<script type="text/javascript" src="assets/js/modules/monApp.js"></script>
+
+<!-- controllers -->
+<script src="assets/js/controllers/ConsController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/visiteControllers.js"></script>
+<script type="text/javascript" src="assets/js/controllers/bienController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/loginController.js"></script>	
+<script type="text/javascript" src="assets/js/controllers/bienController.js"></script>	
+<script type="text/javascript" src="assets/js/controllers/classeSController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/ClientController.js"></script>
+<script type="text/javascript" src="assets/js/controllers/proprietaireControllers.js"></script>
+<script type="text/javascript" src="assets/js/controllers/tabordController.js"></script>
+				
+	
+	<!-- routing -->
+<script type="text/javascript" src="assets/js/routages/ConsRouting.js"></script>
+<!-- <script type="text/javascript" src="assets/js/routages/visiteRouting.js"></script> -->
+<!-- <script type="text/javascript" src="assets/js/routages/bienRouting.js"></script> -->
+
+<!-- provider/service -->
+<script type="text/javascript" src="assets/js/services/conseilerProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/visiteProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/bienProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/loginProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/clientProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/classeSProvider.js"></script>
+<script type="text/javascript" src="assets/js/services/proprietaireServices.js"></script>
+
+
+
+
+	<div class="jumbotron" style="background-color:#F4E5D3; background-position: center; ">
+		<div class="container">
+		
+			<div class="col-xs-offset-2 col-xs-8">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 </html>
+
+
+

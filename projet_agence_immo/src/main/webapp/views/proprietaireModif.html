@@ -1,0 +1,103 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!proprietaireFindAll">Proprietaire</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!proprietaireAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!proprietaireUpdate">Modifier</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!proprietaireDelete">Supprimer</a></li>
+
+
+	</ul>
+
+</nav>
+<h1 style="text-align: center ; ">Formulaire de modification</h1>
+<form class="form-horizontal">
+
+ <div class="form-group">
+    <label for="idP" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="idP" placeholder="IdP" ng-model="proprietaire.id_p">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="idNom" class="col-sm-2 control-label">Nom</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="idNom" placeholder="Nom" ng-model="proprietaire.nom">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idTelP" class="col-sm-2 control-label">Telephone personnel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="idTelP" placeholder="TelP" ng-model="proprietaire.telP">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idTelT" class="col-sm-2 control-label">Telephone travail</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="idTelT" placeholder="TelT" ng-model="proprietaire.telT">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idAdd" class="col-sm-2 control-label">Id adresse du proprietaire</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="idAdd" placeholder="Adresse" ng-model="proprietaire.adresse.id_a">
+    </div>
+  </div>
+  
+   <div class="form-group">
+    <label for="numAdd" class="col-sm-2 control-label">Numero du proprietaire</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="numAdd" placeholder="Numero" ng-model="proprietaire.adresse.num">
+    </div>
+  </div>
+  
+   <div class="form-group">
+    <label for="rueAdd" class="col-sm-2 control-label">Rue du proprietaire</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="rueAdd" placeholder="Rue" ng-model="proprietaire.adresse.rue">
+    </div>
+  </div>
+  
+     <div class="form-group">
+    <label for="cpAdd" class="col-sm-2 control-label">Code postal</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="cpAdd" placeholder="CP" ng-model="proprietaire.adresse.cp">
+    </div>
+  </div>
+  
+     <div class="form-group">
+    <label for="villeAdd" class="col-sm-2 control-label">Ville du proprietaire</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="villeAdd" placeholder="Ville" ng-model="proprietaire.adresse.ville">
+    </div>
+  </div>
+  
+   <div class="form-group">
+    <label for="paysAdd" class="col-sm-2 control-label">Pays du proprietaire</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="paysAdd" placeholder="Pays" ng-model="proprietaire.adresse.pays">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button class="btn btn-primary" ng-click="modifierProprietaire()">Modifier</button>
+    </div>
+  </div>
+</form>

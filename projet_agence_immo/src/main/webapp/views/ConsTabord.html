@@ -1,0 +1,226 @@
+
+<a ng-href="#!tabordAll"><img class="headerlogo"
+	ng-src="{{logohead}}" /></a>
+<h3 class="headertitle" style="color: coral">APSA | LA CLEF DU
+	BONHEUR</h3>
+
+
+<div class="logout1">
+	<a href="#!existCons"><img class="machcafe" ng-src="{{logout}}" /></a>
+</div>
+
+<nav class="navbar navbar-light bg-faded"
+	style="background-color: #F1A67B;">
+
+
+
+
+	<ul class="nav nav-tabs">
+<!-- 		<li class="nav-item"><a class="nav-link active"	href="#!tabordAll">Tableau de bord</a></li> -->
+		<li class="nav-item"><a class="nav-link active" href="#!proprietaireFindAll">Proprietaire</a></li>
+		<li class="nav-item"><a class="nav-link active" href="#!findAllClient">Client</a></li>
+		<li class="nav-item"><a class="nav-link active" href="#!biensAll">Biens immobiliers</a></li>
+		<li class="nav-item"><a class="nav-link active" href="#!findAll">Classe Standard</a></li>
+		<li class="nav-item"><a class="nav-link active"	href="#!visiteFindAll">Visites</a></li>
+		
+	</ul>
+</nav>
+
+
+
+<h3 style="text-align: center; ">Liste des visites</h3>
+</br>
+</br>
+<div ng-app="monApp" ng-controller="visiteListeCtrl">
+	<div class="col-sm-10">
+		<input type="text" class="form-control" placeholder="recherche"
+			ng-model="recherche">
+	</div>
+</div>
+
+</br>
+</br>
+<table class="table table-bordered">
+
+	<tr>
+		<th>id</th>
+		<th>Date</th>
+		<th>Heure</th>
+		<th>Bien</th>
+		<th>Conseiller</th>
+		<th>Client</th>
+		<th>Operations</th>
+	</tr>
+
+	<tr ng-repeat="v in listeVisites | filter:recherche">
+
+		<td>{{v.id_v}}</td>
+		<td>{{v.date}}</td>
+		<td>{{v.heure}}</td>
+		<td>{{v.bien.id_b}}</td>
+		<td>{{v.conseiller.id_co}}</td>
+		<td>{{v.client.id_cl}}</td>
+
+
+
+	</tr>
+
+</table>
+
+</div>
+
+
+
+<br />
+
+
+<h2 style="text-align: center; ">Liste des biens</h2>
+
+<hr />
+<br />
+
+<div ng-app="gestionBiens" ng-controller="biensListeCtrl">
+
+
+	<div class="panel panel-default" ng-repeat="b in listeBiens">
+		<div class="panel-heading" align="center">
+			<h3 class="panel-title">{{b.id_b}}</h3>
+		</div>
+		<div class="panel-body" align="center">
+			<img ng-src="data:image/JPEG;base64,{{b.photo}}" width="200px"
+				height="200px" /> <br /> Type: {{b.type}} <br /> Statut:
+			{{b.statut}} <br /> Adresse: {{b.adresse.num}} {{b.adresse.rue}}
+			{{b.adresse.cp}} {{b.adresse.ville}} {{b.adresse.pays}} <br /> Date
+			de soumission: {{b.dateS}} <br /> Date de disponibilite: {{b.dateD}}
+			<br /> Taxe fonciere: {{b.revC}} <br /> Honoraires: {{b.prix}} <br />
+			Date effective: {{b.dateE}} <br /> Classe standard:
+			{{b.classeS.id_cs}} <br /> Proprietaire: {{b.proprio.id_p}}
+		</div>
+	</div>
+
+</div>
+
+
+<br />
+<h2 style="text-align: center;">Liste des proprietaires de biens</h2>
+<div align="center">
+
+	<table class="table">
+		<tr>
+			<th>id</th>
+			<th class="table-info">Nom</th>
+			<th>Telephone personnel</th>
+			<th class="table-info">Telephone travail</th>
+			<th>Id Adresse</th>
+			<th class="table-info">Numero</th>
+			<th>Rue</th>
+			<th class="table-info">Code postal</th>
+			<th>Ville</th>
+			<th class="table-info">Pays</th>
+
+			<th>Operations</th>
+
+		</tr>
+
+		<tr ng-repeat="pr in listeProprietaires | filter : recherche">
+			<td>{{pr.id_p}}</td>
+			<td class="table-info">{{pr.nom}}</td>
+			<td>{{pr.telP}}</td>
+			<td class="table-info">{{pr.telT}}</td>
+			<td>{{pr.adresse.id_a}}</td>
+			<td class="table-info">{{pr.adresse.num}}</td>
+			<td>{{pr.adresse.rue}}</td>
+			<td class="table-info">{{pr.adresse.cp}}</td>
+			<td>{{pr.adresse.ville}}</td>
+			<td class="table-info">{{pr.adresse.pays}}</td>
+
+
+			<td><a ng-click="deleteLink(pr.id)">Supprimer</a> | <a
+				ng-click="updateLink(pr)">Modifier</a></td>
+
+		</tr>
+
+	</table>
+
+</div>
+
+</br>
+
+<h2 style="text-align: center;">Liste des clients de l'Agence</h2>
+<div align="center">
+
+	<table class="table table-bordered">
+		<tr>
+			<th>ID</th>
+			<th>Nom</th>
+			<th>Telephone Portable</th>
+			<th>Statut</th>
+			<th>ID Adresse</th>
+			<th>Rue</th>
+			<th>Numéro de rue</th>
+			<th>Code Postal</th>
+			<th>Ville</th>
+			<th>Pays</th>
+
+		</tr>
+		<tr ng-repeat="cl in listeClients">
+			<td>{{cl.id_cl}}</td>
+			<td>{{cl.nom}}</td>
+			<td>{{cl.telP}}</td>
+			<td>{{cl.statut}}</td>
+			<td>{{cl.adresse.id_a}}</td>
+			<td>{{cl.adresse.rue}}</td>
+			<td>{{cl.adresse.num}}</td>
+			<td>{{cl.adresse.cp}}</td>
+			<td>{{cl.adresse.ville}}</td>
+			<td>{{cl.adresse.pays}}</td>
+
+
+		</tr>
+
+
+
+	</table>
+
+</div>
+
+
+<div class="footer">
+
+	<!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+		data-target="#myModal">ADM</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Mot de passe</h4>
+				</div>
+				<div class="modal-body">
+					<form method="get" ng-app="Authentication" ng-controller="LoginController" name="Loginform" role="form">
+
+						<div class="form-group">
+							<label for="psw">Password</label> <i class="fa fa-lock"></i> <input
+								type="password" name="psw" id="psw" class="form-control"
+								ng-model="psw" required /> <span
+								ng-show="form.psw.$dirty && form.psw.$error.required"
+								class="help-block">Password is required</span>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" 
+						 ng-click="" data-dismiss="modal">valider</button>				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+

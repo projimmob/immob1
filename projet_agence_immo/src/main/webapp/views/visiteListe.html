@@ -1,0 +1,51 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!visiteFindAll">Visite</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!visiteAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteUpdate">Modifier</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteDelete">Supprimer</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteGetById">Rechercher</a></li>
+	</ul>
+
+</nav>
+<h1 style="text-align: center ; ">Liste des visites</h1>
+
+		<table class="table table-bordered">
+
+<tr>
+				<th>id</th>
+				<th>Date</th>
+				<th>Heure</th>
+				<th>Bien</th>
+			    <th>Conseiller</th>
+				<th>Client</th>
+				
+			</tr>
+			
+			<tr ng-repeat="v in listeVisites">
+			
+			<td>{{v.id_v}}</td>
+		    <td >{{v.date}}</td>
+		     <td>{{v.heure}}</td>
+		     <td>{{v.bien.id_b}}</td>		     
+			<td>{{v.conseiller.id_co}}</td>
+			<td>{{v.client.id_cl}}</td>
+			
+			
+			
+			</tr>
+			
+	</table>		
+			

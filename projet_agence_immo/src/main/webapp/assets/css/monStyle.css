@@ -1,0 +1,40 @@
+body {
+	margin: 0 auto;
+	width: 1040px;
+	padding: 1em;
+/* 	 filter:opacity(30%); */
+
+	
+}
+
+h1{
+	font-size: 12px;
+	color:#468799;
+	font-family: cursive;
+	
+}
+
+.footer{
+	position: relative;
+}
+
+.headerlogo{
+	width: 200px;
+	height:200px;
+	position:relative;
+	top:10px;
+	left:-100px;
+}
+.headertitle{
+	position:relative;
+/* 	top:-5px; */
+	text-align: 
+center;}
+
+.machcafe{
+	position:relative;
+	top: -170px;
+	right:-600px;
+	width:75px;
+	height:75px;
+}

@@ -1,0 +1,41 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!findAll">Classe Standard</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!ajoutCS">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!CSmodif">Modifier</a></li>
+<li class="nav-item"><a class="nav-link disabled"
+		href="#!deleteCS">supprimer</a></li>
+
+
+
+	</ul>
+
+</nav>
+
+
+<h1 style="text-align: center ;">Suppression d'une classe standard</h1>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="idID" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="idID" placeholder="ID" ng-model="idDel">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-primary" ng-click="supprimerClasseS()">Supprimer</button>
+    </div>
+  </div>
+</form>

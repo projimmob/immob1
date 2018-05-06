@@ -1,0 +1,76 @@
+	<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!biensAll">Biens</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!bienAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!biensAllFilter">filtre</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!">Supprimer</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!">Rechercher</a></li>
+	</ul>
+
+</nav>
+
+<h1 style="text-align: center;">Liste des biens</h1>
+
+<hr />
+<br />
+
+<div ng-app="gestionBiens" ng-controller="biensListeFilterCtrl">
+	<form name="bienFilterForm" ng-click="afficher()">
+		<table>
+			<tr>
+				<td>Genre:</td>
+				<td><select name="genre" ng-model="genre">
+						<option value="location">Locations</option>
+						<option value="achat">Achats/Ventes</option>
+				</select></td>
+			</tr>
+		</table>
+	</form>
+	<h1>Liste des biens : {{genre}}</h1>
+	<div class="panel panel-default" ng-repeat="l in listeLocations" ng-show="i_loc">
+		<div class="panel-heading" align="center">
+			<h3 class="panel-title">{{l.bien.id_b}}</h3>
+		</div>
+		<div class="panel-body" align="center">
+			<img ng-src="data:image/JPEG;base64,{{l.bien.photo}}" width="200px"
+				height="200px" /> <br /> Type: {{l.bien.type}} <br /> Statut:
+			{{l.bien.statut}} <br /> Adresse: {{l.bien.adresse.num}} {{l.bien.adresse.rue}}
+			{{l.bien.adresse.cp}} {{l.bien.adresse.ville}} {{l.bien.adresse.pays}} <br /> Date
+			de soumission: {{l.bien.dateS}} <br /> Date de disponibilite: {{l.bien.dateD}}
+			<br /> Taxe fonciere: {{l.bien.revC}} <br /> Honoraires: {{l.bien.prix}} <br />
+			Date effective: {{l.bien.dateE}} <br /> Classe standard:
+			{{l.bien.classeS.id_cs}} <br /> Proprietaire: {{l.bien.proprio.id_p}}
+			<br/>Montant du loyer: {{l.loyer}} <br/> Montant de la caution: {{l.caution}} <br/> Montant des charges: {{l.charges}}
+			<br/> Type de bail: {{l.bail}} <br/> Meuble? : {{l.meuble}}
+		</div>
+		
+	</div>
+	<div class="panel panel-default" ng-repeat="la in listeAchats" ng-show="i_ach">
+		<div class="panel-heading" align="center">
+			<h3 class="panel-title">{{la.bien.id_b}}</h3>
+		</div>
+		<div class="panel-body" align="center">
+			<img ng-src="data:image/JPEG;base64,{{la.bien.photo}}" width="200px"
+				height="200px" /> <br /> Type: {{la.bien.type}} <br /> Statut:
+			{{la.bien.statut}} <br /> Adresse: {{la.bien.adresse.num}} {{la.bien.adresse.rue}}
+			{{la.bien.adresse.cp}} {{la.bien.adresse.ville}} {{la.bien.adresse.pays}} <br /> Date
+			de soumission: {{la.bien.dateS}} <br /> Date de disponibilite: {{la.bien.dateD}}
+			<br /> Taxe fonciere: {{la.bien.revC}} <br /> Honoraires: {{la.bien.prix}} <br />
+			Date effective: {{la.bien.dateE}} <br /> Classe standard:
+			{{la.bien.classeS.id_cs}} <br /> Proprietaire: {{la.bien.proprio.id_p}}
+			<br/>Prix maximum de vente: {{la.prix}} <br/>Etat: {{la.etat}}
+		</div>
+		
+	</div>
+</div>

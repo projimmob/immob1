@@ -1,0 +1,82 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+		
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!findAll">Classe Standard</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!ajoutCS">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!CSmodif">Modifier</a></li>
+<li class="nav-item"><a class="nav-link disabled"
+		href="#!deleteCS">supprimer</a></li>
+
+
+
+
+	</ul>
+
+</nav>
+<h1 style="text-align:center ; ">Liste des classes Standards</h1>
+ <div class="form-group">
+    
+    <div class="col-sm-10">
+      <input  type="text" class="form-control"  placeholder="recherche" ng-model="recherche">
+    </div>
+  </div>
+
+<div align="center">
+
+<table class="table table-bordered">
+	<tr>
+		<th>ID</th>
+		<th>Type de bien</th>
+		<th>Offre</th>
+		<th>Prix Maximum</th>
+		<th>Superficie Minimale</th>
+	
+	</tr>
+	<tr ng-repeat="cs in listeClasseS | filter : recherche">
+		<td>{{cs.id_cs}}</td>
+		<td>{{cs.type}}</td>
+		<td>{{cs.modeO}}</td>
+		<td>{{cs.prixMax}}</td>
+		<td>{{cs.supMin}}</td>
+
+	
+	</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

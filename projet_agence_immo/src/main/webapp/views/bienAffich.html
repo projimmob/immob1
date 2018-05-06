@@ -1,0 +1,45 @@
+	<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+<nav class="navbar navbar-light" style="background-color: #DD8D94;">
+
+	<ul class="nav nav-tabs">
+		<li class="nav-item"><a class="nav-link" href="#!biensAll">Biens</a>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="#!bienAdd">Ajouter</a>
+		</li>
+		<li class="nav-item"><a class="nav-link disabled"
+			href="#!biensAllFilter">filtre</a></li>
+
+		<li class="nav-item"><a class="nav-link disabled" href="#!">Supprimer</a></li>
+
+		<li class="nav-item"><a class="nav-link disabled" href="#!">Rechercher</a></li>
+	</ul>
+
+</nav>
+
+<h1 style="text-align: center; ">Liste des biens</h1>
+
+<hr />
+<br />
+
+<div ng-app="gestionBiens" ng-controller="biensListeCtrl">
+
+
+	<div class="panel panel-default" ng-repeat="b in listeBiens">
+		<div class="panel-heading" style="background-color: #9DC286 "align="center">
+			<h3 class="panel-title">{{b.id_b}}</h3>
+		</div>
+		<div class="panel-body" align="center">
+			<img ng-src="data:image/JPEG;base64,{{b.photo}}" width="200px"
+				height="200px" /> <br /> Type: {{b.type}} <br /> Statut:
+			{{b.statut}} <br /> Adresse: {{b.adresse.num}} {{b.adresse.rue}}
+			{{b.adresse.cp}} {{b.adresse.ville}} {{b.adresse.pays}} <br /> Date
+			de soumission: {{b.dateS}} <br /> Date de disponibilite: {{b.dateD}}
+			<br /> Taxe fonciere: {{b.revC}} <br /> Honoraires: {{b.prix}} <br />
+			Date effective: {{b.dateE}} <br /> Classe standard:
+			{{b.classeS.id_cs}} <br /> Proprietaire: {{b.proprio.id_p}}
+		</div>
+	</div>
+
+</div>

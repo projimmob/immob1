@@ -1,0 +1,67 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+		
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!findAllClient">Clients</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!ajouterClient">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!getClientId">rechercher</a></li>
+
+
+
+
+	</ul>
+
+</nav>
+
+<h1 style="text-align: center ; ">Rechercher d'un client</h1>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="idID" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="idID" placeholder="ID" ng-model="id">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-primary" ng-click="getClientById()">Rechercher</button>
+    </div>
+  </div>
+</form>
+
+
+<div align="center">
+
+		<table class="table table-bordered" ng-show="indice">
+			<tr>
+		<th>ID</th>
+		<th>Nom du Client</th>
+		<th>Téléphone</th>
+		<th>Statut</th>
+		<th>Id Adresse Client</th>
+			</tr>
+			
+			
+			<tr>
+		<td>{{clOut.id_cl}}</td>
+		<td>{{clOut.nom}}</td>
+		<td>{{clOut.telP}}</td>
+		<td>{{clOut.statut}}</td>
+		<td>{{clOut.adresse.id_a}}</td>
+
+			</tr>
+			
+		</table>
+</div>
+
+
+<h1 style="text-align: center ; color: red;" ng-show="indice1">{{message}}</h1>

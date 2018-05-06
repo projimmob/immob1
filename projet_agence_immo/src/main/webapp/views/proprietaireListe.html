@@ -1,0 +1,76 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!proprietaireFindAll">Proprietaire</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!proprietaireAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!proprietaireUpdate">Modifier</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!proprietaireDelete">Supprimer</a></li>
+
+
+	</ul>
+
+</nav>
+<h1 style="text-align: center ; ">Liste des proprietaires de biens</h1>
+   <div class="form-group">
+    
+    <div class="col-sm-10">
+      <input  type="text" class="form-control"  placeholder="recherche" ng-model="recherche">
+    </div>
+  </div>
+
+</br>
+</br>
+
+
+<div align="center">
+
+		<table class="table">
+			<tr>
+			<th>id</th>
+				<th class="table-info">Nom</th>
+				<th>Telephone personnel</th>
+				<th class="table-info">Telephone travail</th>
+				<th >Id Adresse  </th>
+			   <th class="table-info">Numero  </th>
+			   <th>Rue  </th>
+			   <th class="table-info">Code postal  </th>
+			  <th>Ville  </th>
+				<th class="table-info">Pays  </th>
+				
+				<th>Operations</th>
+			
+			</tr>
+			
+			<tr  ng-repeat="pr in listeProprietaires | filter : recherche">
+			<td>{{pr.id_p}}</td>
+			<td class="table-info">{{pr.nom}}</td>		
+				<td>{{pr.telP}}</td>
+				<td class="table-info">{{pr.telT}}</td>
+				<td>{{pr.adresse.id_a}}</td>
+				<td class="table-info">{{pr.adresse.num}}</td>
+				<td>{{pr.adresse.rue}}</td>
+				<td class="table-info">{{pr.adresse.cp}}</td>
+				<td>{{pr.adresse.ville}}</td>
+				<td class="table-info">{{pr.adresse.pays}}</td>
+				
+				
+				<td><a ng-click="deleteLink(pr.id)">Supprimer</a > | <a ng-click="updateLink(pr)">Modifier</a></td>
+			
+			</tr>
+			
+			</table>
+			
+			</div>
+			
+	<h1 style="text-align: center ; color: red;" ng-show="indice1">{{message}}</h1>		

@@ -1,0 +1,68 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+
+
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94 ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!findAllClient">Clients</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!ajouterClient">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!getClientId">rechercher</a></li>
+
+
+
+
+	</ul>
+
+</nav>
+
+<h1 style="text-align:center ;">Liste des clients de l'Agence</h1>
+<div align="center">
+
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>Nom</th>
+		<th>Telephone Portable</th>
+		<th>Statut</th>
+		<th>ID Adresse</th>
+		<th>Rue</th>
+		<th>Numéro de rue</th>
+		<th>Code Postal</th>
+		<th>Ville</th>
+		<th>Pays</th>
+
+	</tr>
+	<tr ng-repeat="cl in listeClients">
+		<td>{{cl.id_cl}}</td>
+		<td>{{cl.nom}}</td>
+		<td>{{cl.telP}}</td>
+		<td>{{cl.statut}}</td>
+		<td>{{cl.adresse.id_a}}</td>
+		<td>{{cl.adresse.rue}}</td>
+		<td>{{cl.adresse.num}}</td>
+		<td>{{cl.adresse.cp}}</td>
+		<td>{{cl.adresse.ville}}</td>
+		<td>{{cl.adresse.pays}}</td>
+
+	
+	</tr>
+
+
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,187 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+
+<nav class="navbar navbar-light" style="background-color: #DD8D94;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!biensAll">Biens</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!bienAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!biensAllFilter">filtre</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!">Supprimer</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!">Rechercher</a></li>
+	</ul>
+
+</nav>
+<h1 style="text-align: center; ">Formulaire d'ajout
+	d'un bien</h1>
+<br />
+<hr />
+
+<h2 style="text-align: center; color:#904F77">Ajout des informations d'un bien</h2>
+<div class="form-group" ng-app="gestionBiens" ng-controller="bienAjoutCtrl">
+
+	<form  name="bienForm" novalidate>
+		<table class="table" border="0">
+			<tr>
+				<th style="text-align: center; color:#468799">Informations generales</th>
+			</tr>
+			<tr>
+				<td>Genre:</td>
+				<td><select class="selectpicker"data-width="auto" name="genre" ng-model="genre">
+						<option value="location">A louer</option>
+						<option value="achat">A vendre</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Type:</td>
+				<td><select class="selectpicker" data-width="auto" name="type" ng-model="bien.type" size="1">
+						<option value="studio" selected="selected">Studio</option>
+						<option value="appartement">Appartement</option>
+						<option value="maison">Maison</option>
+						<option value="entrepot">Entrepot</option>
+						<option value="emplacement">Emplacement</option>
+						<option value="terrain">Terrain</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Honoraires:</td>
+				<td><input  class="form-control"  name="prix" type="number" step="0.01" min="0"
+					ng-model="bien.prix" required></td>
+			</tr>
+
+			<tr>
+				<td>Taxe Fonciere:</td>
+				<td><input class="form-control" name="revC" type="number" step="0.01" min="0"
+					ng-model="bien.revC" required></td>
+			</tr>
+			<tr>
+				<td>Date de disponibilite:</td>
+				<td><input class="form-control" name="dateD" type="date" ng-model="bien.dateD"
+					required></td>
+			</tr>
+			<tr>
+				<td>Photo du bien:</td>
+				<td><input class="form-control" name="photo"  type="file" accept="image/*"
+					base-sixty-four-input ng-model="bien.photo" required></td>
+			</tr>
+			<tr>
+				<td>ID du proprietaire:</td>
+				<td><input class="form-control" name="proprio" type="number" step="1" min="0"
+					ng-model="bien.proprio.id_p" required></td>
+			</tr>
+			<tr>
+				<td>Classe Standard:</td>
+				<td>
+					<select class="selectpicker" data-width="auto" name="classeS" ng-model="bien.classeS.id_cs"
+					size="1">
+						
+						<option ng-repeat="cla in classes">{{cla.id_cs}}</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th style="text-align: center; color:#468799">Adresse du bien</th>
+			</tr>
+			<tr>
+				<td>Numero:</td>
+				<td><input class="form-control" name="num" type="text" ng-model="adr.num" required></td>
+
+			</tr>
+			<tr>
+				<td>Nom de la rue:</td>
+				<td><input class="form-control" name="rue" type="text" ng-model="adr.rue" required></td>
+
+			</tr>
+			<tr>
+				<td >Code postal:</td>
+				<td><input class="form-control" name="cp" type="text" ng-model="adr.cp" required></td>
+
+			</tr>
+			<tr>
+				<td>Ville:</td>
+				<td><input class="form-control" name="ville" type="text" ng-model="adr.ville"
+					required></td>
+
+			</tr>
+			<tr>
+				<td>Pays:</td>
+				<td><select class="selectpicker" data-width="auto" name="pays" ng-model="adr.pays" size="1">
+						<option value="France" selected="selected">France</option>
+						<option value="Italie" selected="selected">Italie</option>
+				</select></td>
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<th>Informations de la location</th>
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<td>Montant du loyer mensuel:</td>
+				<td><input class="form-control" name="loyer" type="number" step="100.50" min="0"
+					ng-model="loc.loyer" required></td>
+
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<td>Montant de la caution:</td>
+				<td><input  class="form-control" name="caution" type="number" step="100.50" min="0"
+					ng-model="loc.caution" required></td>
+
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<td>Montant des changes mensuelles:</td>
+				<td><input class="form-control" name="charges" type="number" step="50.50" min="0"
+					ng-model="loc.charges" required></td>
+
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<td>Type de bail:</td>
+				<td><input class="form-control" name="bail" type="text" ng-model="loc.bail" required></td>
+
+			</tr>
+			<tr ng-show="genre === 'location'">
+				<td>Meuble ? :</td>
+				<td>
+					<select  class="selectpicker" data-style="btn-warning" name="meuble" ng-model="loc.meuble" size="1">
+						<option value="true" selected="selected">Oui</option>
+						<option value="false" selected="selected">Non</option>
+					</select>
+				</td>
+
+			</tr>
+			<tr ng-show="genre === 'achat'">
+				<th>Informations de vente</th>
+			</tr>
+			<tr ng-show="genre === 'achat'">
+				<td>Prix maximum de vente:</td>
+				<td><input class="form-control" name="prixAc" type="number" min="0" step="10000.00" ng-model="ach.prix" required></td>
+
+			</tr>
+			<tr ng-show="genre === 'achat' && bien.type!= 'terrain'">
+				<td>Etat du bien:</td>
+				<td>
+					<select class="selectpicker" data-style="btn-warning" name="etat" ng-model="ach.etat" size="1">
+						<option value="a restaurer" selected="selected">A restaurer</option>
+						<option value="correct" selected="selected">Correct</option>
+						<option value="impeccable" selected="selected">Impeccable</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button type="button" class="btn btn-primary" ng-click="addBien()" >Ajouter</button>
+				</td>
+
+			</tr>
+
+		</table>
+	</form>
+
+<h3 ng-show="indice">{{msg}}</h3>
+</div>
+

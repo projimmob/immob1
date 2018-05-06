@@ -1,0 +1,68 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+	
+<nav class="navbar navbar-light" style="background-color: #A7CDDC ;">
+
+ <ul class="nav nav-tabs">
+	<li class="nav-item"><a class="nav-link" href="#!visiteFindAll">Visite</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" href="#!visiteAdd">Ajouter</a>
+	</li>
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteUpdate">Modifier</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteDelete">Supprimer</a></li>
+
+	<li class="nav-item"><a class="nav-link disabled"
+		href="#!visiteGetById">Rechercher</a></li>
+	</ul>
+
+</nav>
+<h1 style="text-align: center ; ">Formulaire d'ajout</h1>
+
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="idDate" class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="idDate" placeholder="Date" ng-model="visite.date">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="idHeure" class="col-sm-2 control-label">Heure</label>
+    <div class="col-sm-10">
+      <input type="time" class="form-control" id="idHeure" placeholder="Heure" ng-model="visite.heure">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="id_bId" class="col-sm-2 control-label">Id du bien</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="id_bId" placeholder="IdBien" ng-model="visite.bien.id_b">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="id_coId" class="col-sm-2 control-label">Conseiller (id)</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="id_coId" placeholder="IdConseiller" ng-model="visite.conseiller.id_co">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="id_clId" class="col-sm-2 control-label">Client</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="id_clId" placeholder="IdClient" ng-model="visite.client.id_cl">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-primary" ng-click="ajouterVisite()">Ajouter</button>
+    </div>
+  </div>
+</form>

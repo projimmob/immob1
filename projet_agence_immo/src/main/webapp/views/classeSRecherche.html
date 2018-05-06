@@ -1,0 +1,49 @@
+
+		<a ng-href="#!tabordAll"><img class="headerlogo"
+		ng-src="{{logohead}}" /></a>
+
+		
+
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="idID" class="col-sm-2 control-label">Id</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="idID" placeholder="ID" ng-model="id">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-primary" ng-click="getClasseSByID()">Rechercher</button>
+    </div>
+  </div>
+</form>
+
+
+<h1 style="text-align: center ;">Rechercher une classe standard</h1>
+<div align="center">
+
+		<table class="table table-bordered" ng-show="indice">
+			<tr>
+		<th>ID</th>
+		<th>Type de bien</th>
+		<th>Offre</th>
+		<th>Prix Maximum</th>
+		<th>Superficie Minimale</th>
+			</tr>
+			
+			
+			<tr>
+		<td>{{csOut.id_cs}}</td>
+		<td>{{csOut.type}}</td>
+		<td>{{csOut.modeO}}</td>
+		<td>{{csOut.prixMax}}</td>
+		<td>{{csOut.supMin}}</td>
+			</tr>
+			
+		</table>
+</div>
+
+
+<h1 style="text-align: center ; color: red;" ng-show="indice1">{{message}}</h1>
