@@ -24,6 +24,32 @@
 
 <form class="form-horizontal" name="clientForm" novalidate>
 <table class="table" border="0">
+	<tr>
+			<th>Informations generales du client</th>
+		</tr>
+		
+
+		<tr>
+			<td>Nom:</td>
+			<td><input class="form-control" name="nom" type="text" ng-model="client.nom" required></td>
+		</tr>
+
+
+		<tr>
+			<td>TelP:</td>
+			<td><input  class="form-control" name="telP" type="text" ng-model="client.telP" required></td>
+		</tr>
+
+
+		<tr>
+			<td>Statut:</td>
+			<td><select class="selectpicker" data-width="auto"name="statut" ng-model="client.statut">
+					<option value="Demandeur">Demandeur</option>
+					<option value="Acquereur">Acquereur</option>
+			</select></td>
+		</tr>
+
+		<tr>
 			<tr>
 				<th>Adresse du client</th>
 			</tr>
