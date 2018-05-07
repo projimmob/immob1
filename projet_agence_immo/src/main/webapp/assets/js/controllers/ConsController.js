@@ -103,4 +103,17 @@ angular.module('monApp')
 		});
 	}
 
+}).controller("adminCtrl",function($scope,$location){
+	$scope.psw;
+	$scope.i=false;
+	$scope.submitAdmin = function() {
+		if($scope.psw === "admin"){
+			$scope.i=false;
+			$location.path("ConsListe");
+		}
+		else{
+			$scope.msg = "Le mot de passe administrateur est incorrect !!";
+			$scope.i = true;
+		}
+	}
 });

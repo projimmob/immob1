@@ -20,6 +20,9 @@ angular.module('monApp').config(function($routeProvider) {
 	}).when("/delete", {
 		controller : "supprimCtrl",
 		templateUrl : "views/ConsSupp.html"
+	}).when("/ConsListe",{
+		controller : "adminCtrl",
+		templateUrl : "views/ConsListe.html"
 	})
 
 	// les biens

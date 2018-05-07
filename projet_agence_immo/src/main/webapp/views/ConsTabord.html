@@ -31,24 +31,24 @@
 <h3 style="text-align: center; ">Liste des visites</h3>
 </br>
 </br>
-<div class="maper" ng-app="monApp" ng-controller="googleCTRL">
-   <div id="container">
-        <h1>Calcul d'itineraire Google Maps Api V3</h1>
-        <div id="destinationForm">
-            <form action="" method="get" name="direction" id="direction">
-                <label>Point de depart :</label>
-                <input type="text" name="origin" id="origin">
-                <label>Destination :</label>
-                <input type="text" name="destination" id="destination">
-                <input type="button" value="Calculer l'itinéraire" ng-onclick="calculate()">
-            </form>
-        </div>
-        <div id="panel"></div>
-        <div id="map">
-            <p>Veuillez patienter pendant le chargement de la carte...</p>
-        </div>
-    </div>
-    </div>
+<!-- <div class="maper" ng-app="monApp" ng-controller="googleCTRL"> -->
+<!--    <div id="container"> -->
+<!--         <h1>Calcul d'itineraire Google Maps Api V3</h1> -->
+<!--         <div id="destinationForm"> -->
+<!--             <form action="" method="get" name="direction" id="direction"> -->
+<!--                 <label>Point de depart :</label> -->
+<!--                 <input type="text" name="origin" id="origin"> -->
+<!--                 <label>Destination :</label> -->
+<!--                 <input type="text" name="destination" id="destination"> -->
+<!--                 <input type="button" value="Calculer l'itinéraire" ng-onclick="calculate()"> -->
+<!--             </form> -->
+<!--         </div> -->
+<!--         <div id="panel"></div> -->
+<!--         <div id="map"> -->
+<!--             <p>Veuillez patienter pendant le chargement de la carte...</p> -->
+<!--         </div> -->
+<!--     </div> -->
+<!--     </div> -->
 <div ng-app="monApp" ng-controller="visiteListeCtrl">
 	<div class="col-sm-10">
 		<input type="text" class="form-control" placeholder="recherche"
@@ -203,42 +203,15 @@
 </div>
 
 
-<!-- <div class="footer"> -->
 
-<!-- 	<!-- Trigger the modal with a button --> 
-<!-- 	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" -->
-<!-- 		data-target="#myModal">ADM</button> -->
 
-<!-- 	<!-- Modal --> 
-<!-- 	<div class="modal fade" id="myModal" role="dialog"> -->
-<!-- 		<div class="modal-dialog"> -->
-
-<!-- 			<!-- Modal content--> 
-<!-- 			<div class="modal-content"> -->
-<!-- 				<div class="modal-header"> -->
-<!-- 					<button type="button" class="close" data-dismiss="modal">&times;</button> -->
-<!-- 					<h4 class="modal-title">Mot de passe</h4> -->
-<!-- 				</div> -->
-<!-- 				<div class="modal-body"> -->
-<!-- 					<form method="get" ng-app="Authentication" ng-controller="LoginController" name="Loginform" role="form"> -->
-
-<!-- 						<div class="form-group"> -->
-<!-- 							<label for="psw">Password</label> <i class="fa fa-lock"></i> <input -->
-<!-- 								type="password" name="psw" id="psw" class="form-control" -->
-<!-- 								ng-model="psw" required /> <span -->
-<!-- 								ng-show="form.psw.$dirty && form.psw.$error.required" -->
-<!-- 								class="help-block">Password is required</span> -->
-<!-- 						</div> -->
-<!-- 					</form> -->
-<!-- 				</div> -->
-<!-- 				<div class="modal-footer"> -->
-<!-- 					<button type="button" class="btn btn-default"  -->
-<!-- 						 ng-click="" data-dismiss="modal">valider</button>				</div> -->
-<!-- 			</div> -->
-
-<!-- 		</div> -->
-<!-- 	</div> -->
-
-<!-- </div> -->
-
+<div ng-app="monApp" ng-controller="adminCtrl" class="footer" >
+	<form name="adminForm" >
+		<div class="panel-body" align="center">
+			<input name="psw" type="password" 
+					ng-model="psw" class="form-control" placeholder="Mot de passe" required>
+			<button type="button" ng-click="submitAdmin()" class="btn btn-primary">Valider</button>
+		</div>
+	</form>
+</div>
 
