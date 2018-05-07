@@ -22,7 +22,7 @@ clientApp.factory("clientService", function($http){
 			busSC(reponse.data);
 		}, function erreurCallBack(reponse){
 			
-			console.log("Erreur -------"+reponse.statusText);
+			console.log("Erreur -----------"+reponse.statusText);
 		})
 	}
 
