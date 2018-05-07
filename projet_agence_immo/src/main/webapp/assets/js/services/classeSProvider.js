@@ -3,7 +3,7 @@
 angular.module('classeSApp')
 .factory("classeSService", function($http){
 	
-	var restURL="http://localhost:8080/Projet_immo_Marianne";
+	var restURL="http://localhost:8080/projet_agence_immo/";
 	
 	function findAll(busSC){
 		$http({
